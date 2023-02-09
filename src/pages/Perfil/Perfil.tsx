@@ -75,7 +75,7 @@ const Perfil = (props: any) => {
     <PerfilStyles>
       <div className="search">
         <Link to={"/"}>
-          <img src="public/Screenshot from 2023-02-08 19-48-09.png" alt="" />
+          <img src="Screenshot from 2023-02-08 19-48-09.png" alt="" />
         </Link>
         <TextField
           className="input"
