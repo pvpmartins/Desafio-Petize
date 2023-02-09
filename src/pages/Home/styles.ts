@@ -28,4 +28,18 @@ export const HomeStyles = styled.div`
     width: 10rem;
     padding: 1rem;
   }
+  @media (max-width: 480px) {
+    & img {
+      width: 15rem;
+    }
+    & .search {
+      flex-direction: column;
+      width: 8em;
+      & > div {
+      }
+      & input {
+        width: 15rem;
+      }
+    }
+  }
 `;
