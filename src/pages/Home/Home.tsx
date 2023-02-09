@@ -15,7 +15,7 @@ const Home = () => {
 
   return (
     <HomeStyles>
-      <img src="../../assets/Screenshot from 2023-02-08 19-48-09.png" alt="" />
+      <img src="/src/assets/Screenshot from 2023-02-08 19-48-09.png" alt="" />
       <div className="search">
         <TextField
           onChange={(e) => setSearchUser(e.target.value)}
