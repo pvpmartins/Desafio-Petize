@@ -105,7 +105,7 @@ const UserCard = ({
 
   useEffect(() => {
     setScrollHeight(document.body.scrollHeight);
-  }, []);
+  }, [window.onload]);
 
   return (
     <div style={{ height: `${scrollHeight}px` }}>
