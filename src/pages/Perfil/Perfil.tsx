@@ -76,7 +76,7 @@ const Perfil = (props: any) => {
       <div className="search">
         <Link to={"/"}>
           <img
-            src="/src/assets/Screenshot from 2023-02-08 19-48-09.png"
+            src="/public/assets/Screenshot from 2023-02-08 19-48-09.png"
             alt=""
           />
         </Link>
