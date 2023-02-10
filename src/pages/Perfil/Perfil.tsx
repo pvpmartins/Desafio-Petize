@@ -14,8 +14,7 @@ const Perfil = (props: any) => {
   const [isLoadingUser, setIsLoadingUser] = useState(false);
   const [isLoadingRepos, setIsLoadingRepos] = useState(false);
   const [searchUser, setSearchUser] = useState<string>("");
-  const [userErrorMessage, setUserErrorMessage] = useState<string>();
-  const [repoErrorMessage, setRepoErrorMessage] = useState<string>();
+
   const location = useLocation();
 
   const loadUser = async (user: string) => {
@@ -28,9 +27,6 @@ const Perfil = (props: any) => {
       setIsLoadingUser(false);
     } catch (error) {
       console.log(error);
-
-      const err = error as string;
-      setUserErrorMessage(err);
     }
   };
 
@@ -53,7 +49,6 @@ const Perfil = (props: any) => {
       setRepos(repoArr);
     } catch (error) {
       const err = error as string;
-      setRepoErrorMessage;
     }
   };
 
@@ -89,7 +84,7 @@ const Perfil = (props: any) => {
         />
       </div>
       <div className="row">
-        {!!user && (
+        {!!user && !isLoadingUser && (
           <div className="wrapper">
             <UserCard
               bio={user?.bio}
@@ -103,15 +98,10 @@ const Perfil = (props: any) => {
               photo={user?.avatar_url}
               twitter={user?.twitter_username}
               following={user?.following}
-              error={userErrorMessage}
             />
           </div>
         )}
-        <RepoList
-          repoErrorMessage={repoErrorMessage}
-          repoList={repos}
-          isLoading={isLoadingRepos}
-        />
+        <RepoList repoList={repos} isLoading={isLoadingRepos} />
       </div>
     </PerfilStyles>
   );

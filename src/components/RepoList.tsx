@@ -4,10 +4,10 @@ import { IRepo } from "../types";
 import Repo from "./Repo";
 import RepoSkeleton from "./RepoSkeleton";
 
-const RepoList = ({ repoList, isLoading, repoErrorMessage }: RepoListProps) => {
+const RepoList = ({ repoList, isLoading }: RepoListProps) => {
   return (
     <RepoListStyles>
-      {!repoErrorMessage && isLoading && (
+      {isLoading && (
         <>
           <RepoSkeleton />
           <RepoSkeleton />
@@ -15,8 +15,7 @@ const RepoList = ({ repoList, isLoading, repoErrorMessage }: RepoListProps) => {
         </>
       )}
 
-      {!repoErrorMessage &&
-        !isLoading &&
+      {!isLoading &&
         repoList?.map((repo) => (
           <Repo
             desc={repo.description}
@@ -50,7 +49,6 @@ const RepoListStyles = styled.div`
 type RepoListProps = {
   repoList?: IRepo[];
   isLoading: boolean;
-  repoErrorMessage?: string;
 };
 
 export default RepoList;

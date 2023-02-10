@@ -114,6 +114,10 @@ const UserCard = ({
     setScrollHeight(document.body.scrollHeight);
   }, [window.onload]);
 
+  useEffect(() => {
+    console.log({ error });
+  }, [error]);
+
   return (
     <UserCardStyles>
       <div className="avatar">
@@ -131,6 +135,7 @@ const UserCard = ({
         <i style={{ gridArea: "icon2" }} className="fa-regular fa-heart"></i>
         <label style={{ gridArea: "num2" }}>{following} seguindo</label>
       </div>
+      <div className="error">{error}</div>
       <div className="info">
         {!!company && <i className="fa-regular fa-building"></i>}
         {!!company && <label>{company}</label>}
