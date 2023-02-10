@@ -5,14 +5,21 @@ const PerfilStyles = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 1rem 15rem;
+  padding: 1rem;
   gap: 2rem;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+
+  & .input {
+    min-width: 30rem;
+    height: 30px;
+    margin-bottom: 2rem;
+  }
+
   & .search {
     display: flex;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
     gap: 6.5rem;
     & img {
       height: 3rem;
@@ -21,6 +28,47 @@ const PerfilStyles = styled.div`
   & .row {
     display: flex;
     gap: 2rem;
+  }
+
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+    padding: 0rem;
+    background-color: white;
+    & .search {
+      display: none;
+      align-items: center;
+      width: 100%;
+      gap: 6.5rem;
+      & img {
+        height: 3rem;
+      }
+    }
+    & .wrapper {
+      height: fit-content;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      & > {
+        width: 100%;
+      }
+    }
+    & .input {
+      min-width: 15rem;
+      height: 30px;
+      margin-bottom: 1rem;
+    }
+    & .row {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+    }
+  }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    & .search {
+      gap: 2rem;
+    }
+    & .input {
+    }
   }
 `;
 

@@ -28,7 +28,7 @@ export const HomeStyles = styled.div`
     width: 10rem;
     padding: 1rem;
   }
-  @media (max-width: 480px) {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
     & img {
       width: 15rem;
     }
@@ -39,6 +39,21 @@ export const HomeStyles = styled.div`
       }
       & input {
         width: 15rem;
+      }
+    }
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    & img {
+      width: 35rem;
+    }
+    & .search {
+      flex-direction: column;
+      width: 8em;
+      & > div {
+      }
+      & input {
+        width: 25rem;
       }
     }
   }

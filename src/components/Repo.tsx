@@ -47,7 +47,7 @@ const RepoStyles = styled.div`
   background-color: white;
   align-items: flex-start;
   padding: 1rem;
-  width: 40rem;
+  width: 100%;
   border-radius: 8px;
   & a {
     color: black;
@@ -61,6 +61,14 @@ const RepoStyles = styled.div`
     display: flex;
     gap: 1rem;
     align-items: center;
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+    width: 21rem;
+    left: 50%;
+    border-radius: 0;
+    position: relative;
+    transform: translateX(-50%);
+    border-top: 1px solid #c9c9c9;
   }
 `;
 

@@ -4,10 +4,7 @@ import styled from "styled-components";
 const RepoSkeleton = () => {
   return (
     <RepoSkeletonStyles>
-      <label
-        style={{ width: "30%", height: "30px", marginBottom: "1rem" }}
-        className="skeleton"
-      ></label>
+      <label className="skeleton label"></label>
       <p className="skeleton text" style={{ width: "90%", height: "20px" }}></p>
       <p className="skeleton text" style={{ width: "90%", height: "20px" }}></p>
       <p className="skeleton text" style={{ width: "90%", height: "20px" }}></p>
@@ -36,6 +33,11 @@ const RepoSkeletonStyles = styled.div`
   & .skeleton {
     animation: skeleton-loading 1s linear infinite alternate;
   }
+  & .label {
+    width: 30%;
+    height: 30px;
+    margin-bottom: 1rem;
+  }
   & label {
     font-weight: bold;
     font-size: 1.2rem;
@@ -61,6 +63,10 @@ const RepoSkeletonStyles = styled.div`
     100% {
       background-color: hsl(200, 20%, 95%);
     }
+  }
+
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+    width: 100%;
   }
 `;
 

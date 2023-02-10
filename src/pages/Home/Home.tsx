@@ -19,7 +19,7 @@ const Home = () => {
       <div className="search">
         <TextField
           onChange={(e) => setSearchUser(e.target.value)}
-          placeholder="Search"
+          label="Search"
         ></TextField>
 
         <Link

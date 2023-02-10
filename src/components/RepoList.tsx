@@ -38,6 +38,16 @@ const RepoListStyles = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 42rem;
+
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+    gap: 0;
+    width: 100%;
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    width: 26rem;
+  }
 `;
 type RepoListProps = {
   repoList?: IRepo[];

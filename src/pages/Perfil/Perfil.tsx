@@ -37,9 +37,9 @@ const Perfil = (props: any) => {
   const loadRepos = async (user: string) => {
     try {
       setIsLoadingRepos(true);
-      const repoArr = await getRepos(user);
+      const repoArr = (await getRepos(user)) as IRepo[];
       setIsLoadingRepos(false);
-      repoArr.sort((a, b) => {
+      repoArr.sort((a, b): any => {
         if (a.stargazers_count > b.stargazers_count) {
           return -1;
         }
@@ -80,7 +80,6 @@ const Perfil = (props: any) => {
         <TextField
           className="input"
           label="Search"
-          style={{ outline: "purple", width: "55%" }}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               const target = e.target as HTMLInputElement;
@@ -91,20 +90,22 @@ const Perfil = (props: any) => {
       </div>
       <div className="row">
         {!!user && (
-          <UserCard
-            bio={user?.bio}
-            company={user?.company}
-            blog={user?.blog}
-            email={user?.email}
-            followers={user?.followers}
-            location={user?.location}
-            login={user?.login}
-            name={user?.name}
-            photo={user?.avatar_url}
-            twitter={user?.twitter_username}
-            following={user?.following}
-            error={userErrorMessage}
-          />
+          <div className="wrapper">
+            <UserCard
+              bio={user?.bio}
+              company={user?.company}
+              blog={user?.blog}
+              email={user?.email}
+              followers={user?.followers}
+              location={user?.location}
+              login={user?.login}
+              name={user?.name}
+              photo={user?.avatar_url}
+              twitter={user?.twitter_username}
+              following={user?.following}
+              error={userErrorMessage}
+            />
+          </div>
         )}
         <RepoList
           repoErrorMessage={repoErrorMessage}

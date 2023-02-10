@@ -85,6 +85,13 @@ const UserCardStyles = styled.div`
     position: relative;
     transform: translateX(-50%);
   }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+    width: 22rem;
+    background-color: #f7c4cd2e;
+    & .contato {
+      display: none;
+    }
+  }
 `;
 
 const UserCard = ({
@@ -108,50 +115,48 @@ const UserCard = ({
   }, [window.onload]);
 
   return (
-    <div style={{ height: `${scrollHeight}px` }}>
-      <UserCardStyles>
-        <div className="avatar">
-          <img src={photo} alt="" />
-          <div className="avatar__info">
-            <label htmlFor="">{name}</label>
-            <p>@{login}</p>
-          </div>
+    <UserCardStyles>
+      <div className="avatar">
+        <img src={photo} alt="" />
+        <div className="avatar__info">
+          <label htmlFor="">{name}</label>
+          <p>@{login}</p>
         </div>
-        <p className="bio">{bio}</p>
-        <div className="follows">
-          <i style={{ gridArea: "icon1" }} className="fa-solid fa-users"></i>
-          <label style={{ gridArea: "num1" }}>{followers} seguidores</label>
+      </div>
+      <p className="bio">{bio}</p>
+      <div className="follows">
+        <i style={{ gridArea: "icon1" }} className="fa-solid fa-users"></i>
+        <label style={{ gridArea: "num1" }}>{followers} seguidores</label>
 
-          <i style={{ gridArea: "icon2" }} className="fa-regular fa-heart"></i>
-          <label style={{ gridArea: "num2" }}>{following} seguindo</label>
-        </div>
-        <div className="info">
-          {!!company && <i className="fa-regular fa-building"></i>}
-          {!!company && <label>{company}</label>}
-          {!!location && <i className="fa-solid fa-location-dot"></i>}
-          {!!location && <label>{location}</label>}
-          {!!email && <i className="fa-regular fa-envelope"></i>}
-          {!!email && (
-            <a href="">
-              <label>{email}</label>
-            </a>
-          )}
-          {!!blog && <i className="fa-solid fa-link"></i>}
-          {!!blog && (
-            <a href={`${blog}`}>
-              <label>{blog}</label>
-            </a>
-          )}
-          {!!twitter && <i className="fa-brands fa-twitter"></i>}
-          {!!twitter && (
-            <a href={`https://twitter.com/${twitter}`}>
-              <label>{twitter}</label>
-            </a>
-          )}
-        </div>
-        <button className="contato">Contato</button>
-      </UserCardStyles>
-    </div>
+        <i style={{ gridArea: "icon2" }} className="fa-regular fa-heart"></i>
+        <label style={{ gridArea: "num2" }}>{following} seguindo</label>
+      </div>
+      <div className="info">
+        {!!company && <i className="fa-regular fa-building"></i>}
+        {!!company && <label>{company}</label>}
+        {!!location && <i className="fa-solid fa-location-dot"></i>}
+        {!!location && <label>{location}</label>}
+        {!!email && <i className="fa-regular fa-envelope"></i>}
+        {!!email && (
+          <a href="">
+            <label>{email}</label>
+          </a>
+        )}
+        {!!blog && <i className="fa-solid fa-link"></i>}
+        {!!blog && (
+          <a href={`${blog}`}>
+            <label>{blog}</label>
+          </a>
+        )}
+        {!!twitter && <i className="fa-brands fa-twitter"></i>}
+        {!!twitter && (
+          <a href={`https://twitter.com/${twitter}`}>
+            <label>{twitter}</label>
+          </a>
+        )}
+      </div>
+      <button className="contato">Contato</button>
+    </UserCardStyles>
   );
 };
 
