@@ -13,11 +13,13 @@ const Repo = ({ nome, desc, stars, url, updatedAt }: RepoProps) => {
 
     if (diffDays === 0) {
       return "Atualizado hoje";
-    } else if (diffDays > 30) {
+    } else if (diffDays < 30) {
+      return `Atualizado há ${diffDays} dias`;
+    } else if (diffDays >= 30 && diffDays < 365) {
       const meses = Math.ceil(diffDays / 30);
       return `Atualizado há ${meses} meses`;
     }
-    if (diffDays > 365) {
+    if (diffDays >= 365) {
       const anos = Math.ceil(diffDays / 365);
       return `Atualizado há ${anos} anos`;
     }
