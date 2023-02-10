@@ -38,10 +38,12 @@ const PerfilStyles = styled.div`
     padding: 0rem;
     background-color: white;
     & .search {
-      display: none;
+      display: flex;
+      flex-direction: column;
+      padding-top: 1rem;
       align-items: center;
       width: 100%;
-      gap: 6.5rem;
+      gap: 1rem;
       & img {
         height: 3rem;
       }

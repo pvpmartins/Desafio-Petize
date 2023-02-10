@@ -5,10 +5,6 @@ import Repo from "./Repo";
 import RepoSkeleton from "./RepoSkeleton";
 
 const RepoList = ({ repoList, isLoading, repoErrorMessage }: RepoListProps) => {
-  useEffect(() => {
-    console.log(repoErrorMessage);
-  }, [repoErrorMessage]);
-
   return (
     <RepoListStyles>
       {!repoErrorMessage && isLoading && (
@@ -19,7 +15,8 @@ const RepoList = ({ repoList, isLoading, repoErrorMessage }: RepoListProps) => {
         </>
       )}
 
-      {!isLoading &&
+      {!repoErrorMessage &&
+        !isLoading &&
         repoList?.map((repo) => (
           <Repo
             desc={repo.description}
