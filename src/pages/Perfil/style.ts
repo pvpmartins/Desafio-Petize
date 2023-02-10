@@ -5,7 +5,7 @@ const PerfilStyles = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 1rem;
+  padding: 1rem 20rem;
   gap: 2rem;
   align-items: center;
   justify-content: center;
@@ -14,6 +14,10 @@ const PerfilStyles = styled.div`
     min-width: 30rem;
     height: 30px;
     margin-bottom: 2rem;
+  }
+
+  & .wrapper {
+    flex: 1;
   }
 
   & .search {
@@ -47,6 +51,7 @@ const PerfilStyles = styled.div`
       display: flex;
       justify-content: center;
       position: relative;
+
       & > {
         width: 100%;
       }
