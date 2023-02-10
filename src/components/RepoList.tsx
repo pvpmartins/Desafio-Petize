@@ -37,6 +37,7 @@ const RepoList = ({ repoList, isLoading, repoErrorMessage }: RepoListProps) => {
 const RepoListStyles = styled.div`
   display: flex;
   flex-direction: column;
+  flex: 2;
   gap: 1rem;
   width: 42rem;
 

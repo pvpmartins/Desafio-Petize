@@ -29,7 +29,9 @@ const Repo = ({ nome, desc, stars, url, updatedAt }: RepoProps) => {
 
   return (
     <RepoStyles>
-      <a href={url}>{nome}</a>
+      <a data-testid="title" href={url}>
+        {nome}
+      </a>
       <p>{desc}</p>
       <div className="details">
         <i className="fa-regular fa-star"></i>
