@@ -73,6 +73,7 @@ const RepoStyles = styled.div`
     position: relative;
     transform: translateX(-50%);
     border-top: 1px solid #c9c9c9;
+    overflow: hidden;
   }
 `;
 
